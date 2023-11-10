@@ -10,4 +10,5 @@
     <string name="email">Email</string>
     <string name="logo">logo</string>
     <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
 </resources>
