@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.doOnTextChanged
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.password_text_input_layout)
     }
     private val loginButton: Button by lazy { findViewById(R.id.login_button) }
+    private val mainLayout: ConstraintLayout by lazy { findViewById(R.id.main) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val isEmailValid = isEmailValid(inputEmail.editText?.text)
             val passwordLength = inputPassword.editText?.text?.length
+
             if (!isEmailValid) {
                 inputEmail.error = "Email inválido"
             } else {
@@ -36,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                     inputPassword.error = null
                 }
             }
+            successLogin()
         }
     }
     private fun validateButton() {
@@ -47,5 +52,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun isEmailValid(email: CharSequence?): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
+    }
+
+    private fun successLogin() {
+        Snackbar.make(mainLayout, "Login efetuado com sucesso", Snackbar.LENGTH_LONG).show()
     }
 }
