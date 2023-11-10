@@ -9,4 +9,5 @@
     <string name="login_succeeded">Login efetuado com sucesso</string>
     <string name="email">Email</string>
     <string name="logo">logo</string>
+    <string name="senha">Senha</string>
 </resources>
