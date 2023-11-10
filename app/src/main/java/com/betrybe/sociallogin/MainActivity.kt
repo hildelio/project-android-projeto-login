@@ -23,10 +23,18 @@ class MainActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
             val isEmailValid = isEmailValid(inputEmail.editText?.text)
+            val passwordLength = inputPassword.editText?.text?.length
             if (!isEmailValid) {
                 inputEmail.error = "Email inválido"
             } else {
                 inputEmail.error = null
+            }
+            if (passwordLength != null) {
+                if (passwordLength <= 4) {
+                    inputPassword.error = "Senha deve ter mais de 4 caracteres"
+                } else {
+                    inputPassword.error = null
+                }
             }
         }
     }
