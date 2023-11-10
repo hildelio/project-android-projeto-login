@@ -80,7 +80,29 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:text="@string/esqueceu_a_senha"
+            android:textColor="#078348"
+            android:textColorHighlight="#078348"
+            android:textColorLink="#078348"
+            app:strokeColor="#078348"
             tools:ignore="VisualLintButtonSize" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="true"
+        android:text="@string/criar_nova_conta"
+        android:textColor="#078348"
+        android:textColorHighlight="#078348"
+        android:textColorHint="#078348"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
